@@ -1,0 +1,39 @@
+++--------------------------------------------------++
+||                  KEBIJAKAN TOKO                  ||
+++--------------------------------------------------++
+||                                                  ||
+||  Setiap melakukan transaksi pada aplikasi  kami, ||
+||  kami  anggap Anda telah membaca dan  menyetujui ||
+||  segala bentuk syarat dan ketentuan yang berlaku ||
+||                                                  ||
+|| >> Pesanan  akan kami proses apabila anda  telah ||
+||    melakukan   validasi   checkout   pada   menu ||
+||    KERANJANG BELANJA.                            ||
+||                                                  ||
+|| >> Pastikan  melakukan transfer  dengan  nominal ||
+||    yang   tertera.  kelebihan  transfer    bukan ||
+||    tanggung   jawab   kami. kami tidak  menerima ||
+||    pengajuan   refund  uang  dari transfer yang  ||
+||    kelebihan.                                    ||
+||                                                  ||    
+|| >> Kami hanya bekerja sama dengan ekspedisi JNE. ||
+||    FREE ONGKIR menggunakan  packing  buble  wrap ||
+||    dan   kayu   serta    kami    juga    memilih ||
+||    pengantaran berasuransi agar barang anda aman.||
+||                                                  ||
+|| >> Masa Garansi berlaku dimulai sejak anda telah ||
+||    melakukan  validasi checkout dan pengembalian ||
+||    barang  harus  disertai  box  lengkap,  kartu ||
+||    garansi, dan nota pembelian.                  ||
+||                                                  ||
+|| >> Garansi Toko hanya berlaku selama 3 hari, dan ||
+||    garansi  resmi  distributor  tergantung  dari ||
+||    barang yang anda beli.                        ||
+||                                                  ||
+|| >> Ongkos  claim  garansi, baik biaya pengiriman ||
+||    barang,   biaya   sparepart,  dll  ditanggung ||
+||    oleh pembeli.                                 ||
+||                                                  ||	
+++--------------------------------------------------++
+	
+++-----   Enter untuk Kembali ke Menu Utama    -----++
