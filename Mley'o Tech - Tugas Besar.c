@@ -54,7 +54,9 @@ void notaPembayaran(const char*namaCustomer,const char*HP, const char*alamat, co
 
 void keranjangBayar(void); //fungsi untuk mengambil data nota kemudian melanjutkan untuk validasi checkout
 
-void historyPemesanan(void);//fungsi untuk menampilkan history pemesanan 
+void historyPemesanan(void); //fungsi untuk menampilkan history pemesanan 
+
+void dataHistorycust (void); //fungsi untuk menampilkan history pemesanan seluruh cust (admin)
 
 void menuLaptop (void); //fungsi tampilan menu laptop
 
@@ -606,7 +608,6 @@ void menuUtama2 (void){
 // Deskripsi      : fungsi ini berfungsi untuk menampilkan menu Admin    //
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
-
 void menuAdmin (void){
 	menuAdmin:
 	system("cls");
@@ -720,13 +721,48 @@ void historyPemesanan(void){
 }
 
 //-----------------------------------------------------------------------//
+//>>>>>>>>>>>>>  Fungsi Untuk Menampilkan History Customer  <<<<<<<<<<<<<//
+//-----------------------------------------------------------------------//
+//                         >> 1 January 2022 <<                          //
+// Nama Fungsi    : dataHistorycust                                      //
+// Deskripsi      : befungsi untuk menampilkan history belanja customer  //
+//                  customer                                             //
+// Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//-----------------------------------------------------------------------//
+void dataHistorycust (void){
+	system("cls");
+	header();
+	
+	FILE * dataHistory;
+    dataHistory=fopen(histAdmin, "r"); 
+    if(dataHistory==NULL){
+		strcat(histAdmin,user.nama);
+	}
+	
+    dataHistory=fopen(histAdmin, "r"); 
+    if(dataHistory!=NULL){
+		char buff[255];
+    	while(fgets(buff, sizeof(buff), dataHistory)){
+    		printf("%s ",buff);
+    	}
+    }
+    else{
+    	printf("\n\n");
+    	printf("\t\t\t\t   >>Belum Terdapat Tranasaksi Untuk Saat Ini<<");
+    }
+    	fclose(dataHistory);
+    	getch();
+    	menuAdmin();
+	
+}
+
+//-----------------------------------------------------------------------//
 //>>>>>>>>>>>             Fungsi Kebijakan Toko               <<<<<<<<<<<//
 //-----------------------------------------------------------------------//
 //                         >> 6 Desember 2021 <<           	         //
 // Nama Fungsi    : kebijakanToko                                        //
 // Deskripsi      : fungsi ini berfungsi untuk menampilkan isi dari      //
 //                  kebijakan toko                                       //	
-//                                                                       //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
 //                         >> 1 January 2022 <<                          //
@@ -1062,6 +1098,10 @@ void rekomendasiLaptop (void){
 // Deskripsi      : berfungsi untuk memberikan rekomendasi laptop        //
 //                  untuk pengguna                                       //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void rekomendasiLaptop2 (void){
 	
@@ -1070,18 +1110,15 @@ void rekomendasiLaptop2 (void){
 	system("cls");
 	printf("\n\n");
 	header();
-    printf("\t\t\t +----------------------------------------------------------------------+\n");
-    printf("\t\t\t |                   Silahkan pilih penggunaan laptop                   |\n");
-    printf("\t\t\t +---+------------------------------------------------------------------+\n");
-    printf("\t\t\t | 1 |  Pelajar SD/SMP/SMA/Kuliah (basic use word, excel, dll.)         |\n");
-    printf("\t\t\t |---|------------------------------------------------------------------+\n");
-    printf("\t\t\t | 2 |  Pelajar SMK (DKV, Multimedia, IT)                               |\n");
-    printf("\t\t\t |---|------------------------------------------------------------------+\n");
-    printf("\t\t\t | 3 |  Content Creator                                                 |\n");
-    printf("\t\t\t |---|------------------------------------------------------------------+\n");
-    printf("\t\t\t | 4 |  Gamer                                                           |\n");
-    printf("\t\t\t +---+------------------------------------------------------------------+\n");
-    printf("\t\t\t | >> Silahkan pilih penggunaan laptop anda : "); 
+    	baca=fopen("menuLaptop.txt","r");
+	
+		char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t %s", data);
+		}
+		fclose(baca);
     scanf ("%d", &pilih); 
     
     if (pilih==1){
@@ -1170,25 +1207,27 @@ void rekomendasiLaptop2 (void){
 // Deskripsi      : berfungsi untuk menampilkan informasi terkait        //
 //                  dengan program                                       //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 1 Januari 2022 <<           	         //
+// Revisi 1       : Mengganti tampilan dengan file.txt      //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void tentangKami (void){
 	system("cls");
 	printf("\n\n");
-	printf("\t\t\t ++------------------------------------------------------------------++\n");
-	printf("\t\t\t ||                            ABOUT US                              ||\n");
-	printf("\t\t\t ++------------------------------------------------------------------++\n");
-	printf("\t\t\t ||                           Mley'o Tech                            ||\n");
-	printf("\t\t\t ||                                                                  ||\n");
-	printf("\t\t\t ||  -> Alamat          : Jl. Disana GG. Disini No.666, Denpasar     ||\n");
-	printf("\t\t\t ||  -> Contact         : +6281246810121                             ||\n");
-	printf("\t\t\t ||  -> Email           : mleyotech@gmail.com                        ||\n");
-	printf("\t\t\t ||  -> Instagram       : mleyotech.id                               ||\n");
-	printf("\t\t\t ||  -> Shopee          : Mley'o Tech Indonesia                      ||\n");
-	printf("\t\t\t ||  -> Tokopedia       : Mley'o Tech Indonesia                      ||\n");
-	printf("\t\t\t ||                                                                  ||\n");
-	printf("\t\t\t ++------------------------------------------------------------------++\n\n");
+	header();
 	
-	printf("\t\t\t ++----------      Enter untuk Kembali ke Menu Utama      -----------++\n");
+	FILE* baca;
+	baca=fopen("kebijakanToko.txt","r");
+	
+		char data[255];
+		
+		//menampilkan isi file dengan perulangan while
+		while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t\t %s", data);
+		}
+		fclose(baca);
 	getch();
 	menuUtama();
 }
@@ -1383,6 +1422,10 @@ void keranjangBayar (void){
 //                         >> 27 Desember 2021 <<           	         //
 // Revisi 2       : Menambahkan pilihan laptop baru                      //
 // Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 1 Januari 2022 <<           	         //
+// Revisi 3       : Mengganti tampilan dengan file.txt                   //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void listSpesifikasi (void){
 	menuSpec:;
@@ -1393,38 +1436,19 @@ void listSpesifikasi (void){
 	system("cls");
 	printf("\n\n");
 	header();
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||            DAFTAR LAPTOP                   |       HARGA      ||\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||  <1>  Mackbook Air 2020                    |   Rp.16.500.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <2>  Mackbook Pro M1                      |   Rp.20.900.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <3>  ASUS TUF Gaming F15                  |   Rp.18.500.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <4>  ASUS TUF Gaming A15                  |   Rp.16.899.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <5>  ASUS TUF Dash F15 2021               |   Rp.18.799.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <6>  HP Pavilion x360 Convertible         |   Rp.14.999.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <7>  HP Pavilion Gaming dk2068TX          |   Rp.15.499.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <8>  Lenovo Legion Y740                   |   Rp.28.899.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <11>  ASUS Vivobook 15 A516               |   Rp.6.799.000   ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <12>  ASUS VivoBook 14 M415               |   Rp.7.399.000   ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||                     [Y]  Lihat Spesifikasi                    ||\n");
-	printf("\t\t\t  ||                     [T]  Kembali                              ||\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||  >> Cek spesifikasi? : ");
+	baca=fopen("menuLaptop.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t  %s", data);
+		}
+		fclose(baca);
+	printf("\t\t\t  ++-----------------------------------------------------------++\n");
+	printf("\t\t\t  ||                      [Y]  Cek Spesifikasi                 ||\n");
+	printf("\t\t\t  ||                      [T]  Kembali                         ||\n");
+	printf("\t\t\t  +------------------------------------------------------------++\n");
+    printf("\t\t\t                    >> Ingin Cek Spesifikasi? : ");
 	scanf("%s", &pilihan);
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
@@ -1524,6 +1548,10 @@ void listSpesifikasi (void){
 //                         >> 27 Desember 2021 <<           	         //
 // Revisi 2       : Menambahkan pilihan laptop baru                      //
 // Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 1 Januari 2022 <<           	         //
+// Revisi 3       : Mengganti tampilan dengan file.txt                   //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //-----------------------------------------------------------------------//
 void listSpesifikasi2 (void){
 	menuSpec:;
@@ -1534,38 +1562,19 @@ void listSpesifikasi2 (void){
 	system("cls");
 	printf("\n\n");
 	header();
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||            DAFTAR LAPTOP                   |       HARGA      ||\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||  <1>  Mackbook Air 2020                    |   Rp.16.500.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <2>  Mackbook Pro M1                      |   Rp.20.900.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <3>  ASUS TUF Gaming F15                  |   Rp.18.500.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <4>  ASUS TUF Gaming A15                  |   Rp.16.899.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <5>  ASUS TUF Dash F15 2021               |   Rp.18.799.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <6>  HP Pavilion x360 Convertible         |   Rp.14.999.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <7>  HP Pavilion Gaming dk2068TX          |   Rp.15.499.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <8>  Lenovo Legion Y740                   |   Rp.28.899.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <9>  Lenovo Legion 7i                     |   Rp.29.999.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <10>  Lenovo Legion 5 Pro                 |   Rp.35.200.000  ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <11>  ASUS Vivobook 15 A516               |   Rp.6.799.000   ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ||  <12>  ASUS VivoBook 14 M415               |   Rp.7.399.000   ||\n");
-	printf("\t\t\t  ++--------------------------------------------+------------------++\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||                     [Y]  Lihat Spesifikasi                    ||\n");
-	printf("\t\t\t  ||                     [T]  Kembali                              ||\n");
-	printf("\t\t\t  ++---------------------------------------------------------------++\n");
-	printf("\t\t\t  ||  >> Cek spesifikasi? : ");
+	baca=fopen("menuLaptop.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t\t\t  %s", data);
+		}
+		fclose(baca);
+	printf("\t\t\t  ++-----------------------------------------------------------++\n");
+	printf("\t\t\t  ||                      [Y]  Cek Spesifikasi                 ||\n");
+	printf("\t\t\t  ||                      [T]  Kembali                         ||\n");
+	printf("\t\t\t  +------------------------------------------------------------++\n");
+   	printf("\t\t\t                    >> Ingin Cek Spesifikasi? : ");
 	scanf("%s", &pilihan);
 	
 	if (pilihan == 'y'|| pilihan =='Y'){
@@ -1862,30 +1871,19 @@ void specLaptop6 (void){
 //                  tipe laptop	HP Pavilion Gaming dk2068TX              //	
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha -  2105551038     //
 //-----------------------------------------------------------------------//
 void specLaptop7 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                              ** HP Pavilion Gaming dk2068TX **                                      |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Layar IPS Panel                                                                               |\n");
-	printf ("\t |       15.6 inch diagonal, FHD (1920 x 1080)       					          |\n");
-	printf ("\t |       144 Hz, IPS, micro-edge, anti-glare, 250 nits, 45% NTSC                                       |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] Intel® Core™ i7-11370H                                                                        |\n");
-	printf ("\t |       (up to 4.8 GHz with Intel® Turbo Boost Technology, 12 MB L3 cache, 4 cores)                   |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       8 GB DDR4-3200 MHz RAM (1 x 8 GB), 512 GB PCIe® NVMe™ M.2 SSD                                 |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       NVIDIA® GeForce® GTX 1650 Laptop GPU (4 GB GDDR6 dedicated)                   	          |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Windows 10 Home Single Language 64                                                            |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop7.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
 
 //-----------------------------------------------------------------------//
@@ -1897,29 +1895,19 @@ void specLaptop7 (void){
 //                  tipe laptop	Lenovo Legion Y740                       //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha -  2105551038     //
 //-----------------------------------------------------------------------//
 void specLaptop8 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                   * Lenovo Legion Y740 *                                            |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Display                                                                                       |\n");
-	printf ("\t |       15.6 inch FHD (1920 x 1080), 72% color gamut, NVIDIA ® G-SYNC      			          |\n");
-	printf ("\t |       Dolby Vision-enabled, 144 Hz, 300 nits                                                        |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] 8th Gen Intel® Core™ i7-8750H processor                                                       |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       16 GB DDR4 2666 MHz, Up to 512 GB PCIe NVMe, Up to 1 TB HDD 7200RPM                           |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       NVIDIA® GeForce® RTX 2060                                                   	          |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Windows 10 Home                                                                               |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop8.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
 
 //-----------------------------------------------------------------------//
@@ -1931,29 +1919,19 @@ void specLaptop8 (void){
 //                  tipe laptop Lenovo Legion 7i                         //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha -  2105551038     //
 //-----------------------------------------------------------------------//
 void specLaptop9 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                    * Lenovo Legion 7i *                                             |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Display                                                                                       |\n");
-	printf ("\t |       15,6 inch FHD (1920 x 1080), WVA, 300 nits, 144Hz, hingga 5ms untuk waktu respon              |\n");
-	printf ("\t |       100% Adobe sRGB, Dolby Vision™ supported                                                      |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] 10th Gen Intel® Core™ i7-10870H                                                               |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       32GB 3200MHz DDR4, 1TB M.2 NVMe PCIe SSD (RAID 0)                                             |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       NVIDIA®GeForce RTX™ 2060 with Max-Q Design                                                    |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Up to Windows 11 Pro                                                                          |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop9.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
 
 //-----------------------------------------------------------------------//
@@ -1965,30 +1943,19 @@ void specLaptop9 (void){
 //                  tipe laptop	Lenovo Legion 5 Pro                      //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha -  2105551038     //
 //-----------------------------------------------------------------------//
 void specLaptop10 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                  * Lenovo Legion 5 Pro *                                            |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Display                                                                                       |\n");
-	printf ("\t |       16 inch QHD (2560 x 1600) IPS, 16:10, 500 nits, 165Hz / 3ms response time, 100% sRGB, VESA    |\n");
-	printf ("\t |       DisplayHDR™-certified, Dolby Vision™-enabled, NVIDIA®G-SYNC®, AMD Freesync™                   |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] Up to AMD Ryzen™ 7 5800H                                                                      |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       Up to 16GB, Up to 2TB M.2 NVMe PCIe SSD                                                       |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       Up to NVIDIA®GeForce RTX™ 3070 Laptop GPU 8GB GDDR6, listed boost clock 1560MHz               |\n");
-	printf ("\t |       achieved boost clock 1620MHz, maximum graphics power 140W                                     |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Up to Windows 11 Pro                                                                          |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop10.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
 
 //-----------------------------------------------------------------------//
@@ -2000,30 +1967,19 @@ void specLaptop10 (void){
 //                  tipe laptop	Asus VivoBook 15 A516                    //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha -  2105551038     //
 //-----------------------------------------------------------------------//
-void specLaptop11(void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                  * Asus VivoBook 15 A516 *                                          |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Display                                                                                       |\n");
-	printf ("\t |       15.6-inch LED Backlit FHD (1920 x 1080) 16:9 200nits anti-glare panel                         |\n");
-	printf ("\t |       NanoEdge Display                                                                              |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] Up to Intel® Core 11th Gen CPU                                                                |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       4GB on board + 4GB / 4GB, 1TB HDD + 256GB PCIe SSD                                            |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       Up to MX330 Discrete Graphics                                                                 |\n");
-	printf ("\t |       Intel® UHD Graphics 600                                                                       |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Up to Windows 10 Home                                                                         |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+void specLaptop11 (void){
+	baca=fopen("specLaptop11.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
 
 //-----------------------------------------------------------------------//
@@ -2035,27 +1991,17 @@ void specLaptop11(void){
 //                  tipe laptop	Asus VivoBook 14 M415                    //	
 // Dibuat Oleh    : Kadek Rega Prawira Suyoga - 2105551005               //
 //                                                                       //
+//                         >> 1 January 2022 <<                          //
+// Revisi 1       : Mengganti tampilan menggunakan file.txt              //
+// Direvisi Oleh  : I Gede Khresna Adi Wedanta Beratha -  2105551038     //
 //-----------------------------------------------------------------------//
 void specLaptop12 (void){
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |                                  * Asus VivoBook 14 M415 *                                          |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
-	printf ("\t | SPESIFIKASI :                                                                                       |\n");
-	printf ("\t |   [1] Display                                                                                       |\n");
-	printf ("\t |       14.0-inch LED Backlit FHD (1920 x 1080) 16:9 250nits anti-glare IPS-level panel               |\n");
-	printf ("\t |       NanoEdge Display                                                                              |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [2] AMD Athlon Gold 3150U Processor 2.4 GHz (4M Cache, up to 3.3 GHz, 2 cores)                    |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [3] Memori dan Penyimpanan                                                                        |\n");
-	printf ("\t |       4GB DDR4 on board + 4GB DDR4 SO-DIMM, 512GB M.2 NVMe PCIe® 3.0 SSD                            |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [4] Graphic Card                                                                                  |\n");
-	printf ("\t |       AMD Ryzen 5000 Series Mobile Processor                                                        |\n");
-	printf ("\t |                                                                                                     |\n");
-	printf ("\t |   [5] Sistem Operasi                                                                                |\n");
-	printf ("\t |       Up to Windows 10 Home                                                                         |\n");
-	printf ("\t +-----------------------------------------------------------------------------------------------------+\n");
+	baca=fopen("specLaptop12.txt","r");
+			char data[255];
+		
+			while(fgets(data, sizeof(data), baca)){ 
+			// menampilkan isi file
+			printf("\t %s", data);
+		}
+		fclose(baca);
 }
