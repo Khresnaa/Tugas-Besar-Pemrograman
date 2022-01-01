@@ -1,0 +1,16 @@
+++--------------------------------------------------++
+||                    MAIN MENU                     ||
+++--------------------------------------------------++
+||                                                  ||
+||  [1] DAFTAR LAPTOP                               ||
+||  [2] SPESIFIKASI LAPTOP                          ||
+||  [3] REKOMENDASI LAPTOP                          ||
+||  [4] KERANJANG BELANJA                           ||
+||  [5] HISTORY PEMESANAN                           ||
+||                                                  ||
+++--------------------------------------------------++
+||  [6] KEBIJAKAN TOKO                              ||
+||  [7] TENTANG KAMI                                ||
+||  [8] LOGOUT                                      ||
+++--------------------------------------------------++
+       >> Selamat datang, silahkan pilih : 
