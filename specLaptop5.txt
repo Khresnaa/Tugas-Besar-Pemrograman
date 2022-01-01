@@ -1,0 +1,23 @@
++-----------------------------------------------------------------------------------------------------+
+|                                                                                                     |
+|                                  ** ASUS TUF DASH F15 2021 **                                       |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+| SPESIFIKASI :                                                                                       |
+|   [1] Layar IPS Panel                                                                               |
+|       15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Refresh Rate 144Hz,        |
+|       Adobe:47.34%, Value IPS-level, Optimus                                                        |
+|                                                                                                     |
+|   [2] Intel® Core i7-11370H Processor 3.3 GHz, 4 cores                                              |
+|        (12M Cache, up to 4.8GHz)                                                                    |
+|                                                                                                     |
+|   [3] Memori dan Penyimpanan                                                                        |
+|       8GB DDR4 on board, Max Capacity : 32GB                                                        |
+|                                                                                                     |
+|   [4] Graphic Card                                                                                  |
+|       NVIDIA® GeForce RTX 3060 Laptop GPU, 6GB GDDR6                                                |
+|       With ROG Boost up to 1525MHz at 80W (85W with Dynamic Boost)                                  |
+|                                                                                                     |
+|   [5] Sistem Operasi                                                                                |
+|       Windows 10 Home (upgradeable to Windows 11)                                                   |
++-----------------------------------------------------------------------------------------------------+

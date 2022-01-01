@@ -1,0 +1,21 @@
++-----------------------------------------------------------------------------------------------------+
+|                                                                                                     |
+|                                   ** ASUS TUF GAMING F15 **                                         |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+| SPESIFIKASI :                                                                                       |
+|   [1] Layar IPS Panel                                                                               |
+|       15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Refresh Rate 144Hz         |
+|                                                                                                     |
+|   [2] Prosesor Intel® Core i7-10750H Processor 2.6 GHz                                              |
+|       12M Cache, up to 5.0 GHz, 6 cores                                                             |
+|                                                                                                     |
+|   [3] Memori dan Penyimpanan                                                                        |
+|       8GB DDR4 SO-DIMM (expandable up to 32 GB), 512GB M.2 NVMe PCIe® 3.0 SSD                       |
+|                                                                                                     |
+|   [4] Graphic Card                                                                                  |
+|       NVIDIA® GeForce® GTX 1660Ti, 6GB GDDR6                                                        |
+|                                                                                                     |
+|   [5] Sistem Operasi                                                                                |
+|       Windows 10 Home (upgradeable to Windows 11)                                                   |
++-----------------------------------------------------------------------------------------------------+

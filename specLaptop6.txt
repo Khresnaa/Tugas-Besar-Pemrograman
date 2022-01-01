@@ -1,0 +1,22 @@
++-----------------------------------------------------------------------------------------------------+
+|                                                                                                     |
+|                              ** HP Pavilion x360 Convertible **                                     |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+| SPESIFIKASI :                                                                                       |
+|   [1] Layar IPS Panel                                                                               |
+|       14 inch diagonal FHD touch display FHD (1920 x 1080)        				      |
+|       Multitouch-enabled, IPS, edge-to-edge glass, micro-edge, 250 nits, 45% NTSC                   |
+|                                                                                                     |
+|   [2] Intel® Evo® platform 11th Gen Intel® Core i7 processor                                        |
+|       (up to 4.7 GHz with Intel® Turbo Boost Technology, 12 MB L3 cache, 4 cores)                   |
+|                                                                                                     |
+|   [3] Memori dan Penyimpanan                                                                        |
+|       8 GB DDR4-3200 MHz RAM (2 x 4 GB), 512 GB SSD storage                                         |
+|                                                                                                     |
+|   [4] Graphic Card                                                                                  |
+|       IntelÂ® IrisÂ® X? Graphics                                        			      |
+|                                                                                                     |
+|   [5] Sistem Operasi                                                                                |
+|       Windows 10 Home Single Language 64                                                            |
++-----------------------------------------------------------------------------------------------------+
