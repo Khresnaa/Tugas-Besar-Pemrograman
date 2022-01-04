@@ -673,8 +673,8 @@ void editListlaptop (void){
 		gets(input);
 		printf("\t\t\t  >> Input Harga  : "); fflush(stdin);
 		gets(harga);
-		fprintf(edit,"\n\n   %s",input);
-		fprintf(edit,"    || Rp.%s",harga);
+		fprintf(edit,"\n   %s",input);
+		fprintf(edit,"    || Rp.%s \n",harga);
 		fclose(edit);	
 		goto editList;
 	}
