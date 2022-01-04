@@ -108,7 +108,6 @@ FILE*kumpulandata; //pointer untuk mengakses file
 FILE* baca;
 
 char history[100]="history";
-char histAdmin[100]="histAdmin";
 
 time_t kalender; //Tipe data dari library time.h
 
