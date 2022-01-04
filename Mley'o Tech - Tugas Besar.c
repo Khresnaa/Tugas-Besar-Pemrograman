@@ -728,32 +728,26 @@ void historyPemesanan(void){
 // Deskripsi      : befungsi untuk menampilkan history belanja customer  //
 //                  customer                                             //
 // Dibuat Oleh    : I Gede Khresna Adi Wedanta Beratha - 2105551038      //
+//                                                                       //
+//                         >> 3 January 2022 <<                          //
+// Revisi 1       : Mengganti penyimpanan menggunakan file.txt manual    //
+// Direvisi Oleh  : Kadek Rega Prawira Suyoga -  2105551005              //
 //-----------------------------------------------------------------------//
 void dataHistorycust (void){
 	system("cls");
 	header();
-	
+	printf("\t\t\t\t           >> DATA HISTORY PEMESANAN CUSTOMER <<");
 	FILE * dataHistory;
-    dataHistory=fopen(histAdmin, "r"); 
-    if(dataHistory==NULL){
-		strcat(histAdmin,user.nama);
-	}
-	
-    dataHistory=fopen(histAdmin, "r"); 
+    dataHistory=fopen("histAdmin.txt", "r"); 
     if(dataHistory!=NULL){
 		char buff[255];
     	while(fgets(buff, sizeof(buff), dataHistory)){
     		printf("%s ",buff);
     	}
     }
-    else{
-    	printf("\n\n");
-    	printf("\t\t\t\t   >>Belum Terdapat Tranasaksi Untuk Saat Ini<<");
-    }
-    	fclose(dataHistory);
-    	getch();
-    	menuAdmin();
-	
+    fclose(dataHistory);
+    getch();
+    menuAdmin();
 }
 
 //-----------------------------------------------------------------------//
@@ -1341,8 +1335,8 @@ void keranjangBayar (void){
 				    fprintf (cekPembayaran, "\t\t\t\t |   Jumlah Transfer              : %d\n",jumlah);
 				    fprintf (cekPembayaran, "\t\t\t\t +----------------------------------------------------+\n");
 				    fclose  (cekPembayaran);
-				  	
-		        	FILE*historyPembayaran;
+				        //-----------------------------------salin data per user------------------------------------------//	
+		        	        FILE*historyPembayaran;
 					historyPembayaran=fopen(history, "r");
 					    
 					if(history==NULL){
@@ -1358,13 +1352,29 @@ void keranjangBayar (void){
 					fclose(read);
 					fclose(copy);
 					fclose(historyPembayaran);	  	
+					
+				
+				        //------------------------------------------Salin ke admin------------------------------------------//
+					
+					FILE *salinData, *bacaData; //membuat pointer file dengan nama salinData dan bacaData
+					//pointer membuka file dengan mode a+
+					bacaData= fopen(user.nama, "a+");
+					salinData = fopen("histAdmin.txt", "a+");	
 						
+					char Data;
+					while((Data=fgetc(bacaData))!=EOF)
+					//menyimpan karakter ke variabel data
+					fputc(Data,salinData);
+					fclose(bacaData);
+					fclose(salinData);	   	
+						
+					//-----------------menghapus data yang ada dalam keranjang ketika pesanan sudah divalidasi--------------//
 				  	FILE * keranjang;
 				  	keranjang=fopen(user.nama,"w");
 					fprintf (keranjang,"\t\t\t   >>>Keranjang Anda Kosong, Silahkan Lakukan Pemesanan!<<<");
 					fclose (keranjang);
-                    system("pause"); 
-                    menuUtama();
+                                        system("pause"); 
+                                        menuUtama();
 				
 			    } 
 			    else{
