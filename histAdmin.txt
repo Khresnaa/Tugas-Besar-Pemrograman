@@ -1,0 +1,18 @@
+
+
+				 +----------------------------------------------------+
+				 |   Tanggal Pemesanan : Tue Jan 04 16:17:59 2022
+				 |   Nama Customer     : Rega 
+				 |   No Handphone      : 0897776768
+				 |   Alamat Rumah      : Jl nakula sadewa
+				 +----------------------------------------------------+
+				 |   >> Macbook Air 2020
+				 |                                                     
+				 |   TOTAL TAGIHAN : Rp.33000000   
+				 +----------------------------------------------------+
+				 |   Bank                         : BCA
+				 |   No Rekening                  : 99898989
+				 |   Atas Nama                    : Rega 
+				 |   Jumlah Transfer              : 33000000
+				 +----------------------------------------------------+
+
